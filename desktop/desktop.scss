@@ -1,0 +1,32 @@
+$item-height: 40px;
+
+@if $Fixed_mode == "true" {
+  .top-menu {
+    position: fixed;
+    top: 0;
+    z-index: z("header") + 1;
+  }
+
+  .d-header {
+    top: $item-height;
+    position: fixed;
+  }
+
+  #main-outlet {
+    padding-top: calc(5.8572em + #{$item-height});
+  }
+} @else {
+  .d-header {
+    top: $item-height;
+
+    .docked & {
+      top: 0;
+    }
+  }
+}
+
+.top-menu {
+  .menu-item.vmo {
+    display: none;
+  }
+}
